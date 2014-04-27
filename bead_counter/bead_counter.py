@@ -1,10 +1,9 @@
-import sanity_check
-
+#!/usr/bin/env python
 
             
 if __name__ == "__main__":
-    total_beads = raw_input("Please specify number of beads: ")
-    print('yes')
-    print('hey')
-    less_than_12()
-    print('what')
+    import sanity_check
+    beads = raw_input("Please specify number of beads: ")
+    sanity_check.less_than_12(int(beads))
+    sanity_check.not_divisible_by(int(beads))
+
