@@ -6,7 +6,9 @@ class SanityCheck(object):
     to see that the number entered (total_beads) is greater than 12 
     and is divisible by 6 or 9.
     """
-    
+    # Make sure the number entered is an integer
+    def is_an_int(total_beads):
+        pass
     # If total_beads is less than 12, print error message and return
     def less_than_12(total_beads):
         if total_beads < 12:
