@@ -8,7 +8,7 @@ config = {
     'author': 'Greg Aitkenhead',
     'url': 'URL where project will be available.',
     'download_url': 'Where to download it.',
-    'author_email': 'gregaitkenhead@gmail.com',
+    'author_email': 'none',
     'version': '0.1',
     'install_requires': ['nose'],
     'packages': ['bead_counter'],
