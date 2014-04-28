@@ -1,5 +1,5 @@
 import unittest
-from bead_counter import beads
+from bead_counter import beads # throwing an error...4/27
 from bead_counter.sanity_check import less_than_12
 
 class SanityCheckTests(unittest.TestCase):
