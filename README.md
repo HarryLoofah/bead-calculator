@@ -1,7 +1,7 @@
 bead-counter
 ============
 
-A simple Python project to help peyote stitch beadworkers to start their project. 
+A simple Python script to help peyote stitch beadworkers to figure out how many beads to use to start a new project. 
 
 BeadCounter checks to make sure that the number of beads used in the project will 
 work mathematically and lets the beadworker know what design elements will be possible
