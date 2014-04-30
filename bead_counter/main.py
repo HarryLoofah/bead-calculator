@@ -38,9 +38,10 @@ class CheckBeadNum(object):
     # If total_beads is less than 12, print error message and return
     def less_than_12(self, total_beads):
         self.total_beads = total_beads
-        is_less_than_12 = False
+        # through in the following commented out code for testing (failed)
+        #is_less_than_12 = False
         if total_beads < 12:
-            is_less_than_12 = True
+            #is_less_than_12 = True
             print('Error. Please use more than 12 beads.')
             return
             

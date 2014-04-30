@@ -24,11 +24,11 @@ class SanityCheckTests(unittest.TestCase):
         """
         Tests to make sure raw input is greater than 12.
         """
+        #this doesn't work
         check = CheckBeadNum()
         result = check.less_than_12(11)
-        print result.is_less_than_12
         #assert self.output.getvalue() == 'Error. Please use more than 12 beads.'
-        self.assertEqual(result.is_less_than_12, True)
+        self.assertEqual(result, True)
         
     def test_total_beads_is_not_divisible_by_six_or_nine(self):
         """
