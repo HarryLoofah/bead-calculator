@@ -37,12 +37,16 @@ class CheckBeadNum(object):
     """
     # If total_beads is less than 12, print error message and return
     def less_than_12(self, total_beads):
+        self.total_beads = total_beads
+        is_less_than_12 = False
         if total_beads < 12:
+            is_less_than_12 = True
             print('Error. Please use more than 12 beads.')
             return
             
     # If total_beads is not divisible by 6 or 9, print error message and return
     def not_divisible_by(self, total_beads):
+        self.total_beads = total_beads
         if total_beads % 6 != 0 and total_beads % 9 != 0:
             print('Error. Please use a number that is divisible by 6 or 9')
             return
@@ -60,8 +64,8 @@ class ProcessBeadNum(object):
     """
     # Returns long and short side of design elements available depending on
     # whether the number of beads entered in raw_input is mod 6, 9, 0r 12.
-    ls_vals(self, total_beads):
-        pass
+    def ls_vals(self, total_beads):
+        return total_beads % 6 == 0
     
 
 if __name__ == "__main__":
