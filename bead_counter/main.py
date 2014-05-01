@@ -52,7 +52,7 @@ class CheckBeadNum(object):
             print('Error. Please use a number that is divisible by 6 or 9')
             return
             
-class ProcessBeadNum(object):
+class ComputeBeadNum(object):
     """
     Returns long and short design element values, number of beads to start with
     and number of beads to add on the first row of beads, and if the raw_input
