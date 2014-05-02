@@ -19,7 +19,7 @@ class SanityCheckTests(unittest.TestCase):
         """
         compute_num = ComputeBeadNum()
         result = compute_num.ls_vals(12)
-        self.assertTrue(result, 0)
+        self.assertEquals(result, 0)
 
 if __name__ == '__main__':
     # run all TestCase's in this module
