@@ -58,10 +58,21 @@ suggestions are returned if design element options are equal.
 """
 # Returns long and short side of design elements available depending on
 # whether the number of beads entered in raw_input is mod 6, 9, 0r 12.
+# def ls_vals(beads):
+#     if beads % 6 == 0:
+#         short, long = 3, 5
+#         print(short, long)
+
 def ls_vals(beads):
-    if beads % 6 == 0:
-        short, long = 3, 5
-        print(short, long)
+    # Returns long and short side of design elements available depending on
+    # whether the number of beads entered in raw_input is mod 6, 9, 0r 12.
+    d = {
+        6: (3,5), 
+        9: (4,7), 
+        12: (5,9)
+        }
+    list = [v for k, v in d.items() if int(beads) % 6 == 0]
+    print list
 
 
 if __name__ == "__main__":
