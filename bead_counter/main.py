@@ -71,7 +71,7 @@ def ls_vals(beads):
         9: (4,7), 
         12: (5,9)
         }
-    list = [v for k, v in d.items() if int(beads) % 6 == 0]
+    list = [v for k, v in d.items() if int(beads) % k == 0]
     print list
 
 
