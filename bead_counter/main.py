@@ -43,7 +43,7 @@ def less_than_12(beads):
 # If total_beads is not divisible by 6 or 9, print error message and return
 def not_divisible_by(beads):
     if beads % 6 != 0 and beads % 9 != 0:
-        print('Error. Please use a number that is divisible by 6 or 9')
+        print('Please pick a number that is divisible by 6 or 9')
         return
 
 """
@@ -65,14 +65,67 @@ suggestions are returned if design element options are equal.
 
 def ls_vals(beads):
     # Returns long and short side of design elements available depending on
-    # whether the number of beads entered in raw_input is mod 6, 9, 0r 12.
+    # whether the number of beads entered in raw_input is mod 6, 9, or 12.
     d = {
         6: (3,5), 
         9: (4,7), 
         12: (5,9)
         }
     list = [v for k, v in d.items() if int(beads) % k == 0]
-    print list
+    #return sorted(list)
+    print sorted(list) 
+    
+    # Find next usable next_higher bead number
+    higher_list = list
+    if len(higher_list) == 0:  ## this code is not working because next_higher 
+        next_higher = beads    ## is not iterating
+        next_higher += 1
+        higher_list = [v for k, v in d.items() if int(next_higher) % k == 0]
+        print("Try %s beads instead." % next_higher)
+        print sorted(higher_list)
+        
+    # Find next usable next_lower bead number
+    lower_list = list
+    if len(lower_list) == 0:
+        next_lower = beads
+        next_lower -= 1
+        lower_list = [v for k, v in d.items() if int(next_lower) % k == 0]
+        print("Try %s beads instead." % next_lower)
+        print sorted(lower_list)
+    
+def number_suggestion(beads):
+    '''
+    If number entered does not work, then find the closest 
+    usable numbers, figure out which number provides the greatest 
+    number of design options and suggest that number. 
+    '''
+    # Find next usable next_lower bead number
+    next_lower = beads
+    while next_lower > 12 and not passes_any(next_lower):
+        next_lower -= 1
+    low_count = len(passes_test(next_lower))
+
+    # Find next usable next_higher bead number
+    next_higher = beads
+    while next_higher > 12 and not passes_any(next_higher):
+        next_higher += 1
+    high_count = len(passes_test(next_higher))
+
+    # If number doesn't work, suggest better options     
+    # If common behaviour occurs independent of input state,
+    # it should be expressed that way.
+    # That's why this print statement was moved to here,
+    # because the value of counts had no effect on its occurrence.
+    print("\nThere was an error.") 
+    if low_count == high_count:
+        print("Try either %d or %d beads" % (next_lower, next_higher))
+    else:
+        # The elif and else have been merged into one.
+        # The reason being its that their outcome is almost identical.
+        # We can calculate the next_best suggestion using an
+        # inline if else statement
+        next_best = next_lower if low_count > high_count else next_higher
+        print("Try %d beads instead." % next_best)
 
 
 if __name__ == "__main__":
