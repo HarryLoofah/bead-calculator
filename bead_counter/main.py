@@ -63,6 +63,14 @@ def long_short_valuess(beads):
     if len(list) != 0:
         # If the list contains values, print (or return in finished code) sorted(list).
         print("You can use these short/long design elements:\n %s") % sorted(list)
+        
+        # Suggest starting bead number and number of beads to add.
+        # These formulas are based on the specific 'three drop' peyote
+        # stitch pattern used (as opposed to the simpler 'two drop.'
+        suggested = beads 
+        beads_to_add = suggested/3
+        starting_number = beads_to_add*2
+        print('Start with {0} beads then add {1}.' .format(str(starting_number), str(beads_to_add,)))
     
     if len(list) == 0:
         # If list contains no values, find next usable number higher than beads.
