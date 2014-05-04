@@ -91,7 +91,7 @@ def long_short_valuess(beads):
         lower_list = list
         lower_bead_number = beads
         
-        while len(lower_list) == 0 and lower_bead_number > 12:
+        while len(lower_list) == 0 and lower_bead_number > 12: # Added >12 to avoid low numbers.
             # Iterate, then check to see if the new number matches modulo criteria.
             lower_bead_number -= 1
             lower_list = [v for k, v in d.items() if int(lower_bead_number) % k == 0]
