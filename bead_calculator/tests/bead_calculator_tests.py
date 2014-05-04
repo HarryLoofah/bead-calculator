@@ -1,6 +1,4 @@
 import unittest
-from bead_counter.main import CheckBeadNum
-from bead_counter.main import ComputeBeadNum
 
 class SanityCheckTests(unittest.TestCase):
     def setUp(self):

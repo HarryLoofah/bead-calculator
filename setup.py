@@ -4,7 +4,7 @@ except ImportError:
     from distutils.core import setup
 
 config = {
-    'description': 'Bead Counter',
+    'description': 'Bead Calculator',
     'author': 'Greg Aitkenhead',
     'url': 'URL where project will be available.',
     'download_url': 'Where to download it.',
@@ -13,7 +13,7 @@ config = {
     'install_requires': ['nose'],
     'packages': ['bead_counter'],
     'scripts': [],
-    'name': 'Bead Counter'
+    'name': 'Bead Calculator'
 }
 
 setup(**config)
