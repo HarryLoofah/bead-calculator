@@ -47,70 +47,73 @@ def long_short_valuess(beads):
     whether the number of beads entered in raw_input is mod 6, 9, or 12.
     If number of beads entered is not mod 6 or 9, find the higher and
     lower values that match the above criteria and suggest those numbers to
-    the user. Also show the new list values so that the user can see which 
+    the user. Also show the new list values so that the user can see which
     option woulo offer more design choices.
     """
-    d = {
+    check_list = {
         6: (3, 5),
         9: (4, 7),
         12: (5, 9)
         }
-    list = [v for k, v in d.items() if int(beads) % k == 0]
-    
-    if len(list) != 0 and beads >= 12:
-        # If the list contains values, print (or return in finished code) sorted(list).
-        print("You can use these short/long design elements:\n %s") % sorted(list)
+    pass_list = [v for k, v in check_list.items() if int(beads) % k == 0]
+    if len(pass_list) != 0 and beads >= 12:
+        # If the list contains values, print sorted(pass_list).
+        print "You can use these short/long design elements:\n %s" \
+        % sorted(pass_list)
         # Suggest starting bead number and number of beads to add.
         # These formulas are based on the specific 'three drop' peyote
         # stitch pattern used (as opposed to the simpler 'two drop.'
-        suggested = beads 
+        suggested = beads
         beads_to_add = suggested/3
         starting_number = beads_to_add*2
-        print('Start with {0} beads then add {1}.' .format(str(starting_number), str(beads_to_add,)))
-    
-    if len(list) == 0:
+        print 'Start with {0} beads then add {1}.' \
+        .format(str(starting_number), str(beads_to_add,))
+    if len(pass_list) == 0:
         # If list contains no values, find next usable number higher than beads.
-        higher_list = list
-        higher_bead_number = beads
-        while len(higher_list) == 0: 
-            # Iterate, then check to see if the new number matches modulo criteria.
-            higher_bead_number += 1
-            higher_list = [v for k, v in d.items() if int(higher_bead_number) % k == 0]
-            
-            if len(higher_list) != 0 and beads >=12:
-                # Print a message with the suggested higher number and
-                # a list of short and long values when a usable lower number found.
-                print("Try %s beads instead." % higher_bead_number)
-                print("Which gives you these design options:\n %s ") % sorted(higher_list)
-                
-    if len(list) == 0:
+        higher_list = pass_list
+        high_bead = beads
+        while len(higher_list) == 0:
+            # Iterate, then check that the new number matches modulo criteria.
+            high_bead += 1
+            higher_list = \
+            [v for k, v in check_list.items() if int(high_bead) % k == 0]
+            if len(higher_list) != 0 and beads >= 12:
+                # Print a message with the suggested higher number
+                # and a list of short and long values when a usable
+                # lower number is found.
+                print "Try %s beads instead" % high_bead
+                print "Which gives you these design options:\n %s " \
+                % sorted(higher_list)
+    if len(pass_list) == 0:
         # If list contains no values, find next usable number lower than beads.
-        lower_list = list
-        lower_bead_number = beads
-        
-        while len(lower_list) == 0 and lower_bead_number > 12: # Added >12 to avoid low numbers.
-            # Iterate, then check to see if the new number matches modulo criteria.
-            lower_bead_number -= 1
-            lower_list = [v for k, v in d.items() if int(lower_bead_number) % k == 0]
-            
+        lower_list = pass_list
+        low_bead = beads
+        # Added >12 in line below to avoid low numbers.
+        while len(lower_list) == 0 and low_bead > 12:
+            # Iterate, then check if the new number matches modulo criteria.
+            low_bead -= 1
+            lower_list = \
+            [v for k, v in check_list.items() if int(low_bead) % k == 0]
             if len(lower_list) != 0:
-                # Print a message with the suggested lower number and
-                # a list of long and short values when a usable lower number found. 
-                print("Or, try %s beads." % lower_bead_number)
-                print("Which gives you these design options:\n %s ") % sorted(lower_list)
+                # Print a message with the suggested lower number
+                # and a list of long and short values when a usable
+                # lower number is found.
+                print "Or, try %s beads." % low_bead
+                print "Which gives you these design options:\n %s " \
+                % sorted(lower_list)
 
 if __name__ == "__main__":
     import sys
     # Force the user to input a valid integer.
     try:
-        beads = int(raw_input("Please specify number of beads: "))
+        BEAD_INPUT = int(raw_input("Please specify number of beads: "))
     except ValueError:
         print "Input was not an integer."
         try:
-            beads = int(raw_input("Please specify number of beads: "))
+            BEAD_INPUT = int(raw_input("Please specify number of beads: "))
         except ValueError:
             sys.exit()
 
-    sanity_check(beads)
-    long_short_valuess(beads)
+    sanity_check(BEAD_INPUT)
+    long_short_valuess(BEAD_INPUT)
     
