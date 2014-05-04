@@ -82,7 +82,7 @@ def long_short_valuess(beads):
             higher_bead_number += 1
             higher_list = [v for k, v in d.items() if int(higher_bead_number) % k == 0]
             
-            if len(higher_list) != 0:
+            if len(higher_list) != 0 and beads >=12:
                 # Print a message with the suggested higher number and
                 # a list of short and long values when a usable lower number found.
                 print("Try %s beads instead." % higher_bead_number)
