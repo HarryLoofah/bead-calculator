@@ -6,8 +6,8 @@ except ImportError:
 config = {
     'description': 'A script to calculate peyote stich design options.',
     'author': 'Greg Aitkenhead',
-    'url': 'URL where project will be available.',
-    'download_url': 'Where to download it.',
+    'url': 'https://github.com/HarryLoofah/bead-calculator',
+    'download_url': 'https://github.com/HarryLoofah/bead-calculator.git',
     'author_email': 'none',
     'version': '0.1',
     'install_requires': ['nose'],
