@@ -17,12 +17,12 @@ will be possible for the number of starting beads entered.
 2. Measure the object that you'll be beading by stringing beads and wrapping
 thread around the object.
 3. Enter the number of beads from the initial measurement around the object.
-4. BeadCalculator tells you if that number of beads will work, and if it doesn't,
-BeadCalculator suggests an alternative number or numbers to start with.
+4. BeadCalculator tells you if that number of beads will work, and if it
+doesn't, BeadCalculator suggests an alternative numbers to start with.
 
-BeadCalculator also tells the beadworker how many bead to string, how many to add
-(when the first two lines of beads are added to the project), and what long
-and short side design elements will be available.
+BeadCalculator also tells the beadworker how many bead to string, how many
+to addv(when the first two lines of beads are added to the project), and
+what long and short side design elements will be available.
 """
 # imports
 
@@ -35,28 +35,25 @@ def sanity_check(beads):
     """
     # If beads is less than 12, print error message and return.
     if beads < 12:
-        print('Error. Please use more than 12 beads.')
+        print 'Error. Please use more than 12 beads.'
         return
     # If beads is not divisible by 6 or 9, print error message and return
     if beads % 6 != 0 and beads % 9 != 0:
-        print('Please pick a number that is divisible by 6 or 9')
-        return 
-
+        print 'Please pick a number that is divisible by 6 or 9'
+        return
 def long_short_valuess(beads):
     """
     Returns short and long side of design elements depending on
     whether the number of beads entered in raw_input is mod 6, 9, or 12.
-    
-    If number of beads entered is not mod 6 or 9, find the higher and lower 
-    values that match the above criteria and suggest those numbers to the user.
-        
-    Also show the new list values so that the user can see which option would offer
-    more design choices.
+    If number of beads entered is not mod 6 or 9, find the higher and
+    lower values that match the above criteria and suggest those numbers to
+    the user. Also show the new list values so that the user can see which 
+    option woulo offer more design choices.
     """
     d = {
-        6: (3,5), 
-        9: (4,7), 
-        12: (5,9)
+        6: (3, 5),
+        9: (4, 7),
+        12: (5, 9)
         }
     list = [v for k, v in d.items() if int(beads) % k == 0]
     
@@ -102,7 +99,6 @@ def long_short_valuess(beads):
                 print("Or, try %s beads." % lower_bead_number)
                 print("Which gives you these design options:\n %s ") % sorted(lower_list)
 
-    
 if __name__ == "__main__":
     import sys
     # Force the user to input a valid integer.
