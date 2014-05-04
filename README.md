@@ -1,4 +1,4 @@
-bead-counter
+bead-calculator
 ============
 
 A simple Python script to help peyote stitch beadworkers to figure out 
