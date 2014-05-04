@@ -63,7 +63,6 @@ def long_short_valuess(beads):
     if len(list) != 0 and beads >= 12:
         # If the list contains values, print (or return in finished code) sorted(list).
         print("You can use these short/long design elements:\n %s") % sorted(list)
-        
         # Suggest starting bead number and number of beads to add.
         # These formulas are based on the specific 'three drop' peyote
         # stitch pattern used (as opposed to the simpler 'two drop.'
@@ -76,7 +75,6 @@ def long_short_valuess(beads):
         # If list contains no values, find next usable number higher than beads.
         higher_list = list
         higher_bead_number = beads
-        
         while len(higher_list) == 0: 
             # Iterate, then check to see if the new number matches modulo criteria.
             higher_bead_number += 1
@@ -89,7 +87,7 @@ def long_short_valuess(beads):
                 print("Which gives you these design options:\n %s ") % sorted(higher_list)
                 
     if len(list) == 0:
-        # If list contains no values, find next usable number higher than beads.
+        # If list contains no values, find next usable number lower than beads.
         lower_list = list
         lower_bead_number = beads
         
@@ -99,7 +97,7 @@ def long_short_valuess(beads):
             lower_list = [v for k, v in d.items() if int(lower_bead_number) % k == 0]
             
             if len(lower_list) != 0:
-                # Print a message with the suggested higher number and
+                # Print a message with the suggested lower number and
                 # a list of long and short values when a usable lower number found. 
                 print("Or, try %s beads." % lower_bead_number)
                 print("Which gives you these design options:\n %s ") % sorted(lower_list)
