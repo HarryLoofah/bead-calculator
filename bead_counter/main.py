@@ -60,7 +60,7 @@ def long_short_valuess(beads):
         }
     list = [v for k, v in d.items() if int(beads) % k == 0]
     
-    if len(list) != 0:
+    if len(list) != 0 and beads >= 12:
         # If the list contains values, print (or return in finished code) sorted(list).
         print("You can use these short/long design elements:\n %s") % sorted(list)
         
