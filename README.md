@@ -14,7 +14,7 @@ thread around the object.
 3. BeadCalculator tells you if that number of beads will work, and if it doesn't, 
 BeadCalculator suggests an alternative number or numbers to start with. 
 
-BeadCalculator also tells the beadworker how many bead to string, how many to add
+BeadCalculator also tells the beadworker how many beads to string, how many to add
 (when the first two lines of beads are added to the project), and what long 
 and short side design elements will be available. 
 
