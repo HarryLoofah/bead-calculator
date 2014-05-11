@@ -4,25 +4,22 @@
 bead-calculator
 ============
 
-A simple Python script to help peyote stitch beadworkers to figure out
-how many beads to use to start a new project.
-
-BeadCalculator checks to make sure that the number of beads used in the project
-will work mathematically and lets the beadworker know what design elements
-will be possible for the number of starting beads entered.
+A simple Python script to help peyote stitch beadworkers start their projects. 
+BeadCalculator checks to make sure the number of beads used in a project will
+work out mathematically and lets the beadworker know what design elements
+will be possible for the number of starting beads entered. 
 
 ##To Use:
 
-1. Run the program.
-2. Measure the object that you'll be beading by stringing beads and wrapping
+1. Measure the object that you'll be beading by stringing beads and wrapping 
 thread around the object.
-3. Enter the number of beads from the initial measurement around the object.
-4. BeadCalculator tells you if that number of beads will work, and if it
-doesn't, BeadCalculator suggests an alternative numbers to start with.
+2. Enter the number of beads from the initial measurement around the object.
+3. BeadCalculator tells you if that number of beads will work, and if it doesn't, 
+BeadCalculator suggests an alternative number or numbers to start with. 
 
-BeadCalculator also tells the beadworker how many bead to string, how many
-to addv(when the first two lines of beads are added to the project), and
-what long and short side design elements will be available.
+BeadCalculator also tells the beadworker how many beads to string, how many to add
+(when the first two lines of beads are added to the project), and what long 
+and short side design elements will be available.
 """
 # imports
 
@@ -58,8 +55,8 @@ def long_short_valuess(beads):
     pass_list = [v for k, v in check_list.items() if int(beads) % k == 0]
     if len(pass_list) != 0 and beads >= 12:
         # If the list contains values, print sorted(pass_list).
-        print "You can use these short/long design elements:\n %s" \
-        % sorted(pass_list)
+        print "You can use these short/long design elements:\n {0}" \
+        .format(sorted(pass_list))
         # Suggest starting bead number and number of beads to add.
         # These formulas are based on the specific 'three drop' peyote
         # stitch pattern used (as opposed to the simpler 'two drop.'
@@ -82,8 +79,8 @@ def long_short_valuess(beads):
                 # and a list of short and long values when a usable
                 # lower number is found.
                 print "Try %s beads instead" % high_bead
-                print "Which gives you these design options:\n %s " \
-                % sorted(higher_list)
+                print "Which gives you these design options:\n {0} " \
+                .format(sorted(higher_list))
     if len(pass_list) == 0:
         # If list contains no values, find next usable number lower than beads.
         lower_list = pass_list
@@ -98,9 +95,9 @@ def long_short_valuess(beads):
                 # Print a message with the suggested lower number
                 # and a list of long and short values when a usable
                 # lower number is found.
-                print "Or, try %s beads." % low_bead
-                print "Which gives you these design options:\n %s " \
-                % sorted(lower_list)
+                print "Or, try {0} beads." .format(low_bead)
+                print "Which gives you these design options:\n {0} " \
+                .format(sorted(lower_list))
 
 if __name__ == "__main__":
     import sys
