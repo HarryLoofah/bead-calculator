@@ -11,6 +11,7 @@ config = {
     'author_email': 'none',
     'version': '0.1',
     'install_requires': ['nose'],
+    'license': ['MIT']
     'packages': ['bead_calculator'],
     'scripts': [],
     'name': 'BeadCalculator'

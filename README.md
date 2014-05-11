@@ -16,3 +16,5 @@ BeadCalculator also tells the beadworker how many beads to string, how many to a
 (when the first two lines of beads are added to the project), and what long 
 and short side design elements will be available. 
 
+##License:
+MIT
