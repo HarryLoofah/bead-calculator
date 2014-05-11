@@ -52,7 +52,7 @@ def long_short_valuess(beads):
         9: (4, 7),
         12: (5, 9)
         }
-    pass_list = [v for k, v in check_list.items() if int(beads) % k == 0]
+    pass_list = [v for k, v in check_list.iteritems() if int(beads) % k == 0]
     if len(pass_list) != 0 and beads >= 12:
         # If the list contains values, print sorted(pass_list).
         print "You can use these short/long design elements:\n {0}" \
@@ -73,7 +73,7 @@ def long_short_valuess(beads):
             # Iterate, then check that the new number matches modulo criteria.
             high_bead += 1
             higher_list = \
-            [v for k, v in check_list.items() if int(high_bead) % k == 0]
+            [v for k, v in check_list.iteritems() if int(high_bead) % k == 0]
             if len(higher_list) != 0 and beads >= 12:
                 # Print a message with the suggested higher number
                 # and a list of short and long values when a usable
@@ -90,7 +90,7 @@ def long_short_valuess(beads):
             # Iterate, then check if the new number matches modulo criteria.
             low_bead -= 1
             lower_list = \
-            [v for k, v in check_list.items() if int(low_bead) % k == 0]
+            [v for k, v in check_list.iteritems() if int(low_bead) % k == 0]
             if len(lower_list) != 0:
                 # Print a message with the suggested lower number
                 # and a list of long and short values when a usable
