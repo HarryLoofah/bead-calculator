@@ -1,8 +1,0 @@
-setup.py
-BeadCalculator.egg-info/PKG-INFO
-BeadCalculator.egg-info/SOURCES.txt
-BeadCalculator.egg-info/dependency_links.txt
-BeadCalculator.egg-info/requires.txt
-BeadCalculator.egg-info/top_level.txt
-bead_calculator/__init__.py
-bead_calculator/main.py
