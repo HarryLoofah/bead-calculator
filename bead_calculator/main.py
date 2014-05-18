@@ -38,7 +38,7 @@ def sanity_check(beads):
     if beads % 6 != 0 and beads % 9 != 0:
         print 'Please pick a number that is divisible by 6 or 9'
         return
-def long_short_valuess(beads):
+def long_short_values(beads):
     """
     Returns short and long side of design elements depending on
     whether the number of beads entered in raw_input is mod 6, 9, or 12.
@@ -112,5 +112,5 @@ if __name__ == "__main__":
             sys.exit()
 
     sanity_check(BEAD_INPUT)
-    long_short_valuess(BEAD_INPUT)
+    long_short_values(BEAD_INPUT)
     
