@@ -18,3 +18,6 @@ and short side design elements will be available.
 
 ##License:
 MIT
+
+###Try it online:
+http://bead-calculator.appspot.com/
